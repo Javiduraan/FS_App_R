@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage Title="Codigo QR"
+             NavigationPage.HasNavigationBar="False"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FS_App_R.GeneratedQR"
+             xmlns:zxing1="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms"
+             xmlns:zxingcommon="clr-namespace:ZXing.Common;assembly=zxing.portable">
+    <ContentPage.Content>
+        <Grid>
+            <BoxView Color="{AppThemeBinding Dark=Black, Light=#0974ED}"
+                     Opacity="0.2"/>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <StackLayout>
+                    <zxing1:ZXingBarcodeImageView x:Name="barcodePlaceholder"
+                                                  BarcodeValue="Hola a todos"
+                                                  WidthRequest="500"
+                                                  HeightRequest="500"
+                                                  BarcodeFormat="QR_CODE">
+                        <zxing1:ZXingBarcodeImageView.BarcodeOptions>
+                            <zxingcommon:EncodingOptions Width="500" Height="500"/>
+                        </zxing1:ZXingBarcodeImageView.BarcodeOptions>
+                    </zxing1:ZXingBarcodeImageView>
+                    <Label x:Name="lblStatus"
+                           Text=""
+                           FontSize="45"
+                           HorizontalOptions="CenterAndExpand"
+                           VerticalOptions="Center"/>
+                </StackLayout>
+            </Grid>
+        </Grid>
+        
+    </ContentPage.Content>
+</ContentPage>

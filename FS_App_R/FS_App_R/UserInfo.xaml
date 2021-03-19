@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage Title="Informacion de usuario"
+             NavigationPage.HasNavigationBar="False"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FS_App_R.UserInfo">
+    <ContentPage.Content>
+        <Grid>
+            <BoxView Color="{AppThemeBinding Dark=Black, Light=#0974ED}"
+                     Opacity="0.2"/>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <TableView Grid.Row="0"
+                           Intent="Form"
+                           HasUnevenRows="True">
+                    <TableRoot>
+                        <TableSection Title="Información">
+                            <EntryCell Label="Número de empleado"
+                                       LabelColor="{AppThemeBinding Dark=White, Light=Black}"
+                                       Placeholder="(Ejemplo: 334455)"
+                                       Keyboard="Numeric"
+                                       Text="{Binding EmpNumber}"
+                                       x:Name="EmpNum"/>
+                            <EntryCell Label="Nombre(s)"
+                                       LabelColor="{AppThemeBinding Dark=White, Light=Black}"
+                                       Placeholder="Ejemplo: Juan Perez"
+                                       Keyboard="Text"
+                                       Text="{Binding EmployeeName}"
+                                       x:Name="EmpName"/>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal"
+                                             Margin="13,0">
+                                    <Label Text="Tipo de empleado"
+                                           VerticalOptions="Center"
+                                           TextColor="{AppThemeBinding Dark=White, Light=Black}"
+                                           FontAttributes="Bold"/>
+                                    <Picker Title="Seleccionar..."
+                                            TitleColor="{AppThemeBinding Dark=White, Light=Black}"
+                                            HorizontalOptions="EndAndExpand"
+                                            SelectedItem="{Binding EmployeeType}"
+                                            x:Name="PEmpType">
+                                        <Picker.Items>
+                                            <x:String>Limpieza</x:String>
+                                            <x:String>Contratista</x:String>
+                                            <x:String>Seguridad</x:String>
+                                            <x:String>Chofer Camion</x:String>
+                                            <x:String>Comedor</x:String>
+                                            <x:String>Chofer Taxi</x:String>
+                                            <x:String>Visitante</x:String>
+                                            <x:String>Otro servicio</x:String>
+                                        </Picker.Items>
+                                    </Picker>
+                                </StackLayout>
+                            </ViewCell>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal"
+                                             Margin="13,0">
+                                    <Label Text="Edificio"
+                                           VerticalOptions="Center"
+                                           TextColor="{AppThemeBinding Dark=White, Light=Black}"
+                                           FontAttributes="Bold"/>
+                                    <Picker Title="Seleccionar..."
+                                            TitleColor="Black"
+                                            HorizontalOptions="EndAndExpand"
+                                            SelectedItem="{Binding EdifP}"
+                                            x:Name="PEdifP">
+                                        <Picker.Items>
+                                            <x:String>Volantes</x:String>
+                                            <x:String>Bolsas</x:String>
+                                            <x:String>Modulos</x:String>
+                                            <x:String>Centro de Logistica</x:String>
+                                        </Picker.Items>
+                                    </Picker>
+                                </StackLayout>
+                            </ViewCell>
+                        </TableSection>
+                        <TableSection Title="Información de transporte">
+                            <SwitchCell Text="¿Utilizo el transporte de la empresa?"
+                                        On="{Binding IsBus}"
+                                        x:Name="switchIsZF"
+                                        OnChanged="switchIsZF_OnChanged"/>
+                            <EntryCell Label="Número de Camion"
+                                       LabelColor="{AppThemeBinding Dark=White, Light=Black}"
+                                       Placeholder="Ejemplo: 104"
+                                       Keyboard="Text"
+                                       Text="{Binding BusNumber}"
+                                       x:Name="BusNum"
+                                       IsEnabled="False"/>
+                            <EntryCell Label="Número de asiento"
+                                       LabelColor="{AppThemeBinding Dark=White, Light=Black}"
+                                       Placeholder="Ejemplo: 3"
+                                       Keyboard="Numeric"
+                                       Text="{Binding SeatNumb}"
+                                       x:Name="SeatNum"
+                                       IsEnabled="False"/>
+                        </TableSection>
+                        <TableSection>
+                            <ViewCell>
+                                <StackLayout Padding="0,10">
+                                    <Button Text="Siguiente"
+                                            TextColor="{AppThemeBinding Dark=Black, Light=Black}"
+                                            CornerRadius="10"
+                                            BackgroundColor="White"
+                                            BorderWidth="1.5"
+                                            BorderColor="Black"
+                                            HorizontalOptions="CenterAndExpand"
+                                            Clicked="Button_Clicked"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </TableSection>
+                    </TableRoot>
+                </TableView>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

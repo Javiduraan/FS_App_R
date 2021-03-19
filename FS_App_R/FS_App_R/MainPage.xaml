@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage Title="Principal"
+             NavigationPage.HasNavigationBar="False"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FS_App_R.MainPage">
+
+    <Grid>
+        <Image Source="GradientWpp.jpg"
+               Aspect="AspectFill"/>
+        <BoxView Color="{AppThemeBinding Dark=Black, Light=#0974ED}"
+                 Opacity="0.2"/>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Image Grid.Row="0"
+                   Source="CoverMouthIcon.png"
+                   WidthRequest="300"
+                   HeightRequest="300"
+                   Margin="0,100,0,30"/>
+            <StackLayout Grid.Row="1" Padding="30,5">
+                <Button Text="Personal Interno"
+                        TextColor="{AppThemeBinding Dark=Black, Light=Black}"
+                        CornerRadius="10"
+                        BackgroundColor="White"
+                        BorderWidth="1.5"
+                        BorderColor="Black"
+                        Clicked="Button_Clicked"/>
+                <Button Text="Personal Externo"
+                        TextColor="{AppThemeBinding Dark=Black, Light=Black}"
+                        CornerRadius="10"
+                        BackgroundColor="White"
+                        BorderWidth="1.5"
+                        BorderColor="Black"
+                        Clicked="Button_Clicked_1"/>
+                <!--<StackLayout>
+                    <Label Text="Ayuda"
+                           HorizontalOptions="CenterAndExpand"
+                           FontAttributes="Bold"
+                           TextColor="Black"/>
+                </StackLayout>-->
+            </StackLayout>
+        </Grid>
+    </Grid>
+
+</ContentPage>
