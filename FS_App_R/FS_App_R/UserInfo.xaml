@@ -50,6 +50,7 @@
                                             <x:String>Chofer Taxi</x:String>
                                             <x:String>Visitante</x:String>
                                             <x:String>Otro servicio</x:String>
+                                            
                                         </Picker.Items>
                                     </Picker>
                                 </StackLayout>

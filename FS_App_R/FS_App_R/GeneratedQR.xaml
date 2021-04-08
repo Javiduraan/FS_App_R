@@ -27,7 +27,7 @@
                     </zxing1:ZXingBarcodeImageView>
                     <Label x:Name="lblStatus"
                            Text=""
-                           FontSize="45"
+                           FontSize="35"
                            HorizontalOptions="CenterAndExpand"
                            VerticalOptions="Center"/>
                 </StackLayout>

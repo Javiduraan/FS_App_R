@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="2" android:versionName="1.2" package="com.JaviDev.fs_app_r" android:installLocation="internalOnly">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="2" android:versionName="1.3" package="com.JaviDev.fs_app_r" android:installLocation="internalOnly">
 	<uses-sdk android:minSdkVersion="21" android:targetSdkVersion="29" />
 	<application android:label="FiltrosSanitarios.Android" android:theme="@style/MainTheme" android:icon="@drawable/CoverMouthIcon"></application>
 </manifest>

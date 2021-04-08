@@ -34,8 +34,7 @@ namespace FS_App_R
 
             foreach (var item in app.Properties.ToList())
             {
-                if (item.Value.ToString().ToCharArray().All(Char.IsDigit) &&
-                    !item.Value.ToString().ToCharArray().All(Char.IsWhiteSpace))
+                if (item.Value.ToString().ToCharArray().All(Char.IsDigit) && !item.Value.ToString().ToCharArray().All(Char.IsWhiteSpace))
                     copyProps.Add(item.Key, int.Parse(item.Value.ToString()));
                 else if (item.Value.ToString().ToCharArray().All(Char.IsWhiteSpace))
                     copyProps.Add(item.Key, "NA");
@@ -89,31 +88,28 @@ namespace FS_App_R
                 else
                     formattedInfo += userListInfo[i].ToString() + ",";
             }
-            Console.WriteLine(formattedInfo);
-            //app.Properties.Where(p => p.Key != "plantId").ToDictionary(i => i.Key, i => i.Value)
-            //Dictionary<string, object> userFinalInfo = new Dictionary<string, object>
-            //{
-            //    { "datetime", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") },
-            //    { "plantId", app.Properties["plantId"] },
-            //    { "employeeInfo", copyProps},
-            //    { "symptoms", symptoms }
-            //};
-            //string GeneratedInfoUser = GenerateQRCode();
-            //symptoms.Add("TEST", app.Properties);
+            /*
+                Console.WriteLine(formattedInfo);
+                app.Properties.Where(p => p.Key != "plantId").ToDictionary(i => i.Key, i => i.Value)
+                Dictionary<string, object> userFinalInfo = new Dictionary<string, object>
+                {
+                    { "datetime", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") },
+                    { "plantId", app.Properties["plantId"] },
+                    { "employeeInfo", copyProps},
+                    { "symptoms", symptoms }
+                };
+                string GeneratedInfoUser = GenerateQRCode();
+                symptoms.Add("TEST", app.Properties);
 
-             //string json = JsonConvert.SerializeObject(userFinalInfo, Formatting.None);
+                string json = JsonConvert.SerializeObject(userFinalInfo, Formatting.None);
+            */
 
             barcodePlaceholder.BarcodeValue = formattedInfo;
 
             if (yesAnswersCount > 0)
             {
-                lblStatus.Text = "Incorrecto";
+                lblStatus.Text = $"El empleado tiene {yesAnswersCount} o más síntomas";
                 lblStatus.TextColor = Color.Red;
-            }
-            else
-            {
-                lblStatus.Text = "Correcto";
-                lblStatus.TextColor = Color.Green;
             }
         }
     }
